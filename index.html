@@ -3,70 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Блог о путешествиях | Главная</title>
+    <title>Алгоритмы и программирование. Урок для школьников</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Анимированный фон -->
+    <div class="bg-gradient"></div>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
 
-    <!-- Шапка сайта (Заголовок и навигация) -->
-    <header>
-        <h1>Вокруг Света</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Главная1</a></li>
-                <li><a href="#articles">Статьи</a></li>
-                <li><a href="#about">Обо мне</a></li>
-            </ul>
-        </nav>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <div class="logo-mark">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Алгоритмы<em>Программирование</em></span>
+            </a>
+
+            <div class="header-actions">
+                
+            </div>
+        </div>
     </header>
 
-    <!-- Основное содержимое страницы (только одно на странице) -->
-    <main>
+    <!-- Навигация -->
+    <nav class="navigation">
+        <div class="container nav-inner">
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active">Главная</a></li>
+                <li><a href="#" class="nav-link">Ввод и вывод</a></li>
+                <li><a href="#" class="nav-link">Условия</a></li>
+                <li><a href="#" class="nav-link">Циклы</a></li>
+                <li><a href="#" class="nav-link">Рекурсия</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <!-- Крупный логический раздел: Список статей -->
-        <section id="articles">
-            <h2>Новые публикации</h2>
+    <!-- Основной контент -->
+    <main class="main">
+        <div class="container">
 
-            <!-- Независимый, самодостаточный блок: Статья 1 -->
-            <article>
-                <header>
-                    <h3>Магия Горного Алтая</h3>
-                    <p>Опубликовано: <time datetime="2026-09-15">15 сентября 2026</time></p>
-                </header>
-                <p>В этой статье я расскажу о нашем недельном походе к подножию Белухи. Мы прошли более 50 километров...</p>
-                <footer>
-                    <p>Теги: #алтай #поход #путешествия</p>
-                </footer>
-            </article>
+            <!-- Hero -->
+            <section class="hero">
+                <h1 class="hero-title">
+                    Тема урока:<br>
+                    <span class="gradient-text">Алгоритмы и программирование</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Алгоритм — это точная последовательность понятных шагов и инструкций, 
+                    которая приводит к решению конкретной задачи или получению заданного 
+                    результата.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-lg">
+                        Начать
+                        <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
 
-            <!-- Независимый, самодостаточный блок: Статья 2 -->
-            <article>
-                <header>
-                    <h3>Выходные в Калининграде</h3>
-                    <p>Опубликовано: <time datetime="2026-09-10">10 сентября 2026</time></p>
-                </header>
-                <p>Калининград встретил нас европейской архитектурой и запахом моря. Балтийская коса — обязательное место к посещению...</p>
-                <footer>
-                    <p>Теги: #калининград #балтика #архитектура</p>
-                </footer>
-            </article>
 
-        </section>
+            <!-- Обсуждения -->
+            <section class="section">
+                <div class="section-head">
+                    <h2 class="section-title"><span class="gradient-text">Об алгоритмах</span></h2>
+                </div>
 
-        <!-- Боковая панель (Дополнительный контент, косвенно связанный с основным) -->
-        <aside id="about">
-            <h3>Об авторе</h3>
-            <p>Меня зовут Алекс. Я посетил 30 стран и делюсь здесь своим опытом бюджетных поездок.</p>
-            <h3>Подписка</h3>
-            <p>Следите за мной в Telegram и YouTube.</p>
-        </aside>
+                <div class="discussions-list">
+                    <article class="discussion-item">
+                        <div class="avatar avatar-gradient-1">А</div>
+                        <div class="discussion-content">
+                            <div class="discussion-top">
+                                <h3><a href="#">Виды алгоритмических конструкций</a></h3>
+                            </div>
+                            <p>Линейный - вычислительный процесс, при
+                                котором все этапы решения задачи
+                                выполняются в естественном порядке следования
+                                записи этих этапов.
+                            </p>
+                            <p>Ветвящийся - вычислительный процесс, в котором
+                                выбор направления обработки информации зависит от
+                                исходных или промежуточных данных
+                            </p>
+                            <p>Циклический - вычислительный процесс, содержащий
+                                один или несколько циклов.
+                            </p>
+                            <p>Рекурсивный - вычислительный процесс, организованный
+                                таким образом, что в процессе обработки информации на каком-либо
+                                шаге он прямо или косвенно обращается сам к себе.
+                            </p>
+                            </p>
+                        </div>
+                    </article>
 
+                    <article class="discussion-item">
+                        <div class="avatar avatar-gradient-2">B</div>
+                        <div class="discussion-content">
+                            <div class="discussion-top">
+                                <h3><a href="#">Методы разработки алгоритмов</a></h3>
+                            </div>
+                            <p>Метод частных целей - сложная задача сводится
+                                к последовательности более простых задач.
+                            </p>
+                            <p>Метод подъёма - начинается с принятия начального
+                                предположения или построения начального 
+                                решения задачи.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="discussion-item">
+                        <div class="avatar avatar-gradient-3">C</div>
+                        <div class="discussion-content">
+                            <div class="discussion-top">
+                                <h3><a href="#">Программы и ПО</a></h3>
+                            </div>
+                            <p>Программа - это последовательность команд,
+                                которую выполняет компьютер в процессе 
+                                обработки информации.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        </div>
     </main>
 
-    <!-- Подвал сайта (Юридическая информация, копирайт) -->
-    <footer>
-        <p>&copy; 2026 Вокруг Света. Все права защищены.</p>
-        <p><a href="#privacy">Политика конфиденциальности</a></p>
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-mark">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Алгоритмы<em>Программирование</em></span>
+                    </div>
+                    <p>Урок информатики для школьников</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="#">Ввод и вывод</a></li>
+                        <li><a href="#">Условия</a></li>
+                        <li><a href="#">Циклы</a></li>
+                        <li><a href="#">Рекурсия</a></li>
+                        <li><a href="#">Виды алгоритмических конструкций</a></li>
+                        <li><a href="#">Методы разработки алгоритмов</a></li>
+                        <li><a href="#">Программы и ПО</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><a href="#">MAX</a></li>
+                    </ul>
+                </div>
+        </div>
     </footer>
 
+    <script>
+        // Анимация счётчиков
+        const counters = document.querySelectorAll('.stat-value');
+        const animateCount = (el, target) => {
+            const duration = 1500;
+            const start = performance.now();
+            const step = (now) => {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.floor(eased * target).toLocaleString('ru-RU');
+                if (progress < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    animateCount(el, parseInt(el.dataset.count));
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(c => observer.observe(c));
+    </script>
 </body>
 </html>
