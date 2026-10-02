@@ -116,6 +116,64 @@
                     0 0 200px rgba(230, 51, 51, 0.45);
             }
         }
+        /* ---- Рамка с кодом в стиле playground ---- */
+.code-frame {
+    position: relative;
+    max-width: 620px;
+    margin: 40px auto 32px;
+    padding: 24px 28px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    text-align: left;
+    font-family: 'Space Grotesk', 'Consolas', 'Menlo', monospace;
+    font-size: 14px;
+    line-height: 1.75;
+    overflow: hidden;
+}
+
+.code-frame::before {
+    content: attr(data-file);
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8b8b9e;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.code-frame pre {
+    margin: 0;
+    white-space: pre;
+    overflow-x: auto;
+    color: #e0e0f0;
+}
+
+/* Подсветка Паскаля */
+.code-frame .kw   { color: #7c5cff; font-weight: 700; }
+.code-frame .type { color: #00d4ff; font-weight: 600; }
+.code-frame .num  { color: #ffb800; }
+.code-frame .cmt  { color: #5a5a6e; font-style: italic; }
+.code-frame .fn   { color: #ff6bcb; }
+/* Подсветка Python */
+.code-frame .py-kw   { color: #7c5cff; font-weight: 700; }
+.code-frame .py-fn   { color: #ff6bcb; }
+.code-frame .py-num  { color: #ffb800; }
+.code-frame .py-cmt  { color: #5a5a6e; font-style: italic; }
+
+/* Подсветка Java */
+.code-frame .jv-kw   { color: #7c5cff; font-weight: 700; }
+.code-frame .jv-type { color: #00d4ff; font-weight: 600; }
+.code-frame .jv-fn   { color: #ff6bcb; }
+.code-frame .jv-num  { color: #ffb800; }
+.code-frame .jv-cmt  { color: #5a5a6e; font-style: italic; }
     </style>
 </head>
 <body>
@@ -191,7 +249,57 @@
                 <div class="loop-status" id="status">Вызовов: 0 из 3</div>
                 <button class="btn-reset" id="reset">Начать заново</button>
             </div>
+<!-- Рамка с кодом на Паскале: рекурсия -->
+<div class="code-frame" data-file="Программа на языке Pascal">
+<pre><span class="kw">program</span> Recur;
 
+<span class="cmt">{ Рекурсивный отсчёт: печатает n, n-1, ..., 1 }</span>
+
+<span class="kw">procedure</span> Count(n : <span class="type">integer</span>);
+<span class="kw">begin</span>
+  <span class="kw">if</span> n = <span class="num">0</span> <span class="kw">then</span>
+    <span class="kw">exit</span>;              <span class="cmt">{ базовый случай: остановка }</span>
+
+  <span class="fn">writeln</span>(n);            <span class="cmt">{ печатаем текущее число }</span>
+  Count(n - <span class="num">1</span>);          <span class="cmt">{ рекурсивный вызов }</span>
+<span class="kw">end</span>;
+
+<span class="kw">begin</span>
+  Count(<span class="num">3</span>);               <span class="cmt">{ запуск: 3, 2, 1 }</span>
+<span class="kw">end</span>.</pre>
+</div>
+<!-- Рамка с кодом на Python: рекурсия -->
+<div class="code-frame" data-file="Программа на языке Python">
+<pre><span class="py-cmt"># Рекурсивный отсчёт: печатает n, n-1, ..., 1</span>
+
+<span class="py-kw">def</span> count(n):
+    <span class="py-kw">if</span> n == <span class="py-num">0</span>:
+        <span class="py-kw">return</span>              <span class="py-cmt"># базовый случай</span>
+
+    <span class="py-fn">print</span>(n)                <span class="py-cmt"># печатаем число</span>
+    count(n - <span class="py-num">1</span>)             <span class="py-cmt"># рекурсивный вызов</span>
+
+count(<span class="py-num">3</span>)                    <span class="py-cmt"># запуск: 3, 2, 1</span></pre>
+</div>
+
+<!-- Рамка с кодом на Java: рекурсия -->
+<div class="code-frame" data-file="Программа на языке Java">
+<pre><span class="jv-cmt">// Рекурсивный отсчёт: печатает n, n-1, ..., 1</span>
+<span class="jv-kw">public class</span> Recur {
+    <span class="jv-kw">static void</span> count(<span class="jv-type">int</span> n) {
+        <span class="jv-kw">if</span> (n == <span class="jv-num">0</span>) {
+            <span class="jv-kw">return</span>;              <span class="jv-cmt">// базовый случай</span>
+        }
+
+        System.out.<span class="jv-fn">println</span>(n);    <span class="jv-cmt">// печатаем число</span>
+        <span class="jv-fn">count</span>(n - <span class="jv-num">1</span>);         <span class="jv-cmt">// рекурсивный вызов</span>
+    }
+
+    <span class="jv-kw">public static void</span> main(<span class="jv-type">String</span>[] args) {
+        <span class="jv-fn">count</span>(<span class="jv-num">3</span>);                <span class="jv-cmt">// запуск: 3, 2, 1</span>
+    }
+}</pre>
+</div>
             <!-- Кнопка далее -->
             <section class="hero" style="padding: 0;">
                 <div class="hero-actions">

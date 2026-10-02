@@ -115,6 +115,64 @@
             0 0 200px rgba(230, 51, 51, 0.45);
     }
 }
+/* ---- Рамка с кодом в стиле playground ---- */
+.code-frame {
+    position: relative;
+    max-width: 620px;
+    margin: 40px auto 32px;
+    padding: 24px 28px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    text-align: left;
+    font-family: 'Space Grotesk', 'Consolas', 'Menlo', monospace;
+    font-size: 14px;
+    line-height: 1.75;
+    overflow: hidden;
+}
+
+.code-frame::before {
+    content: attr(data-file);
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8b8b9e;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.code-frame pre {
+    margin: 0;
+    white-space: pre;
+    overflow-x: auto;
+    color: #e0e0f0;
+}
+
+/* Подсветка Паскаля */
+.code-frame .kw   { color: #7c5cff; font-weight: 700; }
+.code-frame .type { color: #00d4ff; font-weight: 600; }
+.code-frame .num  { color: #ffb800; }
+.code-frame .cmt  { color: #5a5a6e; font-style: italic; }
+.code-frame .fn   { color: #ff6bcb; }
+/* Подсветка Python */
+.code-frame .py-kw   { color: #7c5cff; font-weight: 700; }
+.code-frame .py-fn   { color: #ff6bcb; }
+.code-frame .py-num  { color: #ffb800; }
+.code-frame .py-cmt  { color: #5a5a6e; font-style: italic; }
+
+/* Подсветка Java */
+.code-frame .jv-kw   { color: #7c5cff; font-weight: 700; }
+.code-frame .jv-type { color: #00d4ff; font-weight: 600; }
+.code-frame .jv-fn   { color: #ff6bcb; }
+.code-frame .jv-num  { color: #ffb800; }
+.code-frame .jv-cmt  { color: #5a5a6e; font-style: italic; }
     </style>
 </head>
 <body>
@@ -192,7 +250,39 @@
                 <div class="loop-status" id="status">Повторений: 0 из 3</div>
                 <button class="btn-reset" id="reset">Начать заново</button>
             </div>
+<!-- Рамка с кодом на Паскале: цикл -->
+<div class="code-frame" data-file="Программа на языке Pascal">
+<pre><span class="kw">program</span> Loop;
 
+<span class="cmt">{ Простейший цикл: повторить 3 раза }</span>
+
+<span class="kw">var</span>
+  i : <span class="type">integer</span>;
+
+<span class="kw">begin</span>
+  <span class="kw">for</span> i := <span class="num">1</span> <span class="kw">to</span> <span class="num">3</span> <span class="kw">do</span>
+    <span class="fn">writeln</span>(i);      <span class="cmt">{ выводим номер шага }</span>
+<span class="kw">end</span>.</pre>
+</div>
+<!-- Рамка с кодом на Python: цикл -->
+<div class="code-frame" data-file="Программа на языке Python">
+<pre><span class="py-cmt"># Простейший цикл: повторить 3 раза</span>
+
+<span class="py-kw">for</span> i <span class="py-kw">in</span> <span class="py-fn">range</span>(<span class="py-num">1</span>, <span class="py-num">4</span>):
+    <span class="py-fn">print</span>(i)         <span class="py-cmt"># выводим номер шага</span></pre>
+</div>
+
+<!-- Рамка с кодом на Java: цикл -->
+<div class="code-frame" data-file="Программа на языке Java">
+<pre><span class="jv-cmt">// Простейший цикл: повторить 3 раза</span>
+<span class="jv-kw">public class</span> Loop {
+    <span class="jv-kw">public static void</span> main(<span class="jv-type">String</span>[] args) {
+        <span class="jv-kw">for</span> (<span class="jv-type">int</span> i = <span class="jv-num">1</span>; i &lt;= <span class="jv-num">3</span>; i++) {
+            System.out.<span class="jv-fn">println</span>(i);   <span class="jv-cmt">// выводим номер шага</span>
+        }
+    }
+}</pre>
+</div>
             <!-- Кнопка далее -->
             <section class="hero" style="padding: 0;">
                 <div class="hero-actions">

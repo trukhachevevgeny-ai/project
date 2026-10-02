@@ -8,6 +8,71 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+
+      /* ---- Рамка с кодом в стиле playground ---- */
+.code-frame {
+    position: relative;
+    max-width: 620px;
+    margin: 40px auto 32px;
+    padding: 24px 28px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    text-align: left;
+    font-family: 'Space Grotesk', 'Consolas', 'Menlo', monospace;
+    font-size: 14px;
+    line-height: 1.75;
+    overflow: hidden;
+}
+
+.code-frame::before {
+    content: attr(data-file);
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted, #8b8b9e);
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.code-frame pre {
+    margin: 0;
+    white-space: pre;
+    overflow-x: auto;
+    color: #e0e0f0;
+}
+/* ---- Подсветка синтаксиса Java ---- */
+.code-frame .jv-kw   { color: #7c5cff; font-weight: 700; } /* public, class, static, void */
+.code-frame .jv-type { color: #00d4ff; font-weight: 600; } /* String, int, Scanner */
+.code-frame .jv-fn   { color: #ff6bcb; }                    /* println, nextLine, main */
+.code-frame .jv-str  { color: #00ffa3; }                    /* строки */
+.code-frame .jv-num  { color: #ffb800; }                    /* числа */
+.code-frame .jv-cmt  { color: #5a5a6e; font-style: italic; } /* // комментарии */
+.code-frame .jv-ann  { color: #ffb800; }  
+.code-frame--java::before { content: 'Program.java'; }                  /* аннотации @Override */
+/* ---- Подсветка синтаксиса Python ---- */
+.code-frame .py-kw  { color: #7c5cff; font-weight: 700; } /* def, if, else, return */
+.code-frame .py-fn  { color: #ff6bcb; }                    /* print, input */
+.code-frame .py-str { color: #00ffa3; }                    /* строки */
+.code-frame .py-num { color: #ffb800; }                    /* числа */
+.code-frame .py-cmt { color: #5a5a6e; font-style: italic; } /* # комментарии */
+/* Подсветка синтаксиса Паскаля */
+.code-frame--py::before { content: 'program.py'; }
+.code-frame .kw   { color: #7c5cff; font-weight: 700; }   /* program, var, begin, end */
+.code-frame .type { color: #00d4ff; font-weight: 600; }   /* integer, string */
+.code-frame .str  { color: #00ffa3; }                     /* строки в кавычках */
+.code-frame .num  { color: #ffb800; }                     /* числа */
+.code-frame .cmt  { color: #5a5a6e; font-style: italic; } /* комментарии */
+.code-frame .fn   { color: #ff6bcb; }                     /* writeln, readln */
+    </style>
 </head>
 <body>
     <!-- Анимированный фон -->
@@ -262,7 +327,45 @@
   updateIndicator();
 })();
 </script>
+<!-- Рамка с кодом на Паскале -->
+<div class="code-frame" data-file="Программа на языке Pascal">
+<pre><span class="kw">Program</span> VvodVivod;
 
+<span class="cmt">{ Программа: что на входе — то и на выходе }</span>
+
+<span class="kw">var</span>
+  c : <span class="type">string</span>;  <span class="cmt">{ вход: цвет кружка }</span>
+
+<span class="kw">begin</span>
+  <span class="fn">readln</span>(c);       <span class="cmt">{ читаем вход }</span>
+  <span class="fn">writeln</span>(c);      <span class="cmt">{ выводим то же самое }</span>
+<span class="kw">end</span>.</pre>
+</div>
+<!-- Рамка с кодом на Python -->
+<div class="code-frame" data-file="Программа на языке Python">
+<pre><span class="py-cmt"># Программа: что на входе — то и на выходе</span>
+
+<span class="py-kw">def</span> main():
+    c = <span class="py-fn">input</span>()          <span class="py-cmt"># читаем вход</span>
+    <span class="py-fn">print</span>(c)            <span class="py-cmt"># выводим то же самое</span>
+
+<span class="py-kw">if</span> __name__ == <span class="py-str">"__main__"</span>:
+    main()</pre>
+</div>
+<!-- Рамка с кодом на Java -->
+<div class="code-frame" data-file="Программа на языке Java">
+<pre><span class="jv-cmt">// Программа: что на входе — то и на выходе</span>
+<span class="jv-kw">import</span> java.util.Scanner;
+
+<span class="jv-kw">public class</span> Program {
+    <span class="jv-kw">public static void</span> main(<span class="jv-type">String</span>[] args) {
+        <span class="jv-type">Scanner</span> sc = <span class="jv-kw">new</span> <span class="jv-type">Scanner</span>(System.in);
+        <span class="jv-type">String</span> c = sc.<span class="jv-fn">nextLine</span>();   <span class="jv-cmt">// читаем вход</span>
+        System.out.<span class="jv-fn">println</span>(c);         <span class="jv-cmt">// выводим то же самое</span>
+        sc.<span class="jv-fn">close</span>();
+    }
+}</pre>
+</div>
             <!-- Hero -->
             <section class="hero">
                 <div class="hero-actions">
