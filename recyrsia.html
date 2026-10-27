@@ -73,7 +73,7 @@
             transition: color 0.3s ease;
         }
         .loop-status.done {
-            color: #ff5252;
+            color: #d63031;
             font-weight: 700;
         }
 
@@ -209,6 +209,7 @@
                 <li><a href="yslovia.html" class="nav-link">Условия</a></li>
                 <li><a href="cicili.html" class="nav-link">Циклы</a></li>
                 <li><a href="recyrsia.html" class="nav-link active">Рекурсия</a></li>
+                <li><button class="theme-btn" id="themeBtn">🌙 Тёмная тема</button></li>
             </ul>
         </div>
     </nav>
@@ -216,14 +217,13 @@
     <!-- Основной контент -->
     <main class="main">
         <div class="container">
-
-            <h1 class="title">Программа Рекурсия. Функция вызывает саму себя</h1>
-            <p class="hint">
-                Рекурсия — это когда функция внутри себя вызывает саму себя
-                с новыми данными. Каждый такой вызов «уходит в глубину».
-                Перетащите кружок в серую зону <b>3 раза</b>, чтобы достичь
-                базового случая — и рекурсия завершится.
-            </p>
+<h1 class="lesson-title">Программа Рекурсия. Функция вызывает саму себя</h1>
+            <p class="hint" style="color:#333333;">
+    Рекурсия — это когда функция внутри себя вызывает саму себя
+    с новыми данными. Каждый такой вызов «уходит в глубину».
+    Перетащите кружок в серую зону <b style="color:#2c3e50;">3 раза</b>, чтобы достичь
+    базового случая — и рекурсия завершится.
+</p>
 
             <div class="playground playground--md" id="playground">
 
@@ -242,12 +242,12 @@
             <div class="loop-panel">
                 <div class="loop-label">Глубина рекурсии</div>
                 <div class="loop-dots">
-                    <span class="loop-dot"></span>
-                    <span class="loop-dot"></span>
-                    <span class="loop-dot"></span>
-                </div>
+    <span class="loop-dot" style="background:#e2e8f0; border:2px solid #94a3b8;"></span>
+    <span class="loop-dot" style="background:#e2e8f0; border:2px solid #94a3b8;"></span>
+    <span class="loop-dot" style="background:#e2e8f0; border:2px solid #94a3b8;"></span>
+</div>
                 <div class="loop-status" id="status">Вызовов: 0 из 3</div>
-                <button class="btn-reset" id="reset">Начать заново</button>
+                <button class="btn-reset" id="reset" style="background:#eef2f3; color:#2c3e50; border:1px solid #cbd5e0;">Начать заново</button>
             </div>
 <!-- Рамка с кодом на Паскале: рекурсия -->
 <div class="code-frame" data-file="Программа на языке Pascal">
@@ -540,5 +540,6 @@ count(<span class="py-num">3</span>)                    <span class="py-cmt"># �
         updateDots();
     })();
     </script>
+<script src="script.js"></script>
 </body>
 </html>

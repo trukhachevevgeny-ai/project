@@ -40,12 +40,13 @@
     <nav class="navigation">
         <div class="container nav-inner">
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Главная</a></li>
-                <li><a href="vvod.html" class="nav-link">Ввод и вывод</a></li>
-                <li><a href="yslovia.html" class="nav-link">Условия</a></li>
-                <li><a href="cicili.html" class="nav-link">Циклы</a></li>
-                <li><a href="recyrsia.html" class="nav-link">Рекурсия</a></li>
-            </ul>
+    <li><a href="index.html" class="nav-link active">Главная</a></li>
+    <li><a href="vvod.html" class="nav-link">Ввод и вывод</a></li>
+    <li><a href="yslovia.html" class="nav-link">Условия</a></li>
+    <li><a href="cicili.html" class="nav-link">Циклы</a></li>
+    <li><a href="recyrsia.html" class="nav-link">Рекурсия</a></li>
+    <li><button class="theme-btn" id="themeBtn">🌙 Тёмная тема</button></li>
+</ul>
         </div>
     </nav>
 
@@ -73,72 +74,20 @@
                     </button></form>
                 </div>
 
-
+</section>
             <!-- Обсуждения -->
             <section class="section">
                 <div class="section-head">
                     <h2 class="section-title"><span class="gradient-text">Об алгоритмах</span></h2>
                 </div>
 
-                <div class="discussions-list">
-                    <article class="discussion-item">
-                        <div class="avatar avatar-gradient-1">А</div>
-                        <div class="discussion-content">
-                            <div class="discussion-top">
-                                <h3><a href="vidi.html">Виды алгоритмических конструкций</a></h3>
-                            </div>
-                            <p>Линейный - вычислительный процесс, при
-                                котором все этапы решения задачи
-                                выполняются в естественном порядке следования
-                                записи этих этапов.
-                            </p>
-                            <p>Ветвящийся - вычислительный процесс, в котором
-                                выбор направления обработки информации зависит от
-                                исходных или промежуточных данных
-                            </p>
-                            <p>Циклический - вычислительный процесс, содержащий
-                                один или несколько циклов.
-                            </p>
-                            <p>Рекурсивный - вычислительный процесс, организованный
-                                таким образом, что в процессе обработки информации на каком-либо
-                                шаге он прямо или косвенно обращается сам к себе.
-                            </p>
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="discussion-item">
-                        <div class="avatar avatar-gradient-2">B</div>
-                        <div class="discussion-content">
-                            <div class="discussion-top">
-                                <h3><a href="metodi.html">Методы разработки алгоритмов</a></h3>
-                            </div>
-                            <p>Метод частных целей - сложная задача сводится
-                                к последовательности более простых задач.
-                            </p>
-                            <p>Метод подъёма - начинается с принятия начального
-                                предположения или построения начального 
-                                решения задачи.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="discussion-item">
-                        <div class="avatar avatar-gradient-3">C</div>
-                        <div class="discussion-content">
-                            <div class="discussion-top">
-                                <h3><a href="prog.html">Программы и ПО</a></h3>
-                            </div>
-                            <p>Программа - это последовательность команд,
-                                которую выполняет компьютер в процессе 
-                                обработки информации.
-                            </p>
-                        </div>
-                    </article>
+                                <!-- Поле живого поиска -->
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Введите название или тег статьи для поиска...">
                 </div>
-            </section>
 
-        </div>
+                <!-- В этот пустой контейнер JavaScript будет вставлять наши статьи -->
+                <div id="postsContainer" class="discussions-list"></div>
     </main>
 
     <!-- Подвал -->
@@ -173,9 +122,10 @@
                 <div class="footer-col">
                     <h4>Контакты</h4>
                     <ul>
-                        <li><a href="#">MAX</a></li>
+                         <li><a href="#">MAX</a></li>
                     </ul>
                 </div>
+            </div>
         </div>
     </footer>
 
@@ -206,5 +156,6 @@
 
         counters.forEach(c => observer.observe(c));
     </script>
+<script src="script.js"></script>
 </body>
 </html>

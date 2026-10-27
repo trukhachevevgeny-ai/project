@@ -73,7 +73,7 @@
             transition: color 0.3s ease;
         }
         .loop-status.done {
-            color: #00ffa3;
+            color: #00b894;
             font-weight: 700;
         }
 
@@ -211,6 +211,7 @@
                 <li><a href="yslovia.html" class="nav-link">Условия</a></li>
                 <li><a href="cicili.html" class="nav-link active">Циклы</a></li>
                 <li><a href="recyrsia.html" class="nav-link">Рекурсия</a></li>
+                <li><button class="theme-btn" id="themeBtn">🌙 Тёмная тема</button></li>
             </ul>
         </div>
     </nav>
@@ -218,13 +219,12 @@
     <!-- Основной контент -->
     <main class="main">
         <div class="container">
-
-            <h1 class="title">Программа Цикл. Повторение действий несколько раз</h1>
-            <p class="hint">
-                Цикл заставляет программу выполнять одно и то же действие
-                несколько раз. Перетащите кружок в серую зону <b>3 раза</b> —
-                и цикл завершится.
-            </p>
+<h1 class="lesson-title">Программа Цикл. Повторение действий несколько раз</h1>
+            <p class="hint" style="color:#333333;">
+    Цикл заставляет программу выполнять одно и то же действие
+    несколько раз. Перетащите кружок в серую зону <b style="color:#2c3e50;">3 раза</b> —
+    и цикл завершится.
+</p>
 
             <div class="playground playground--md" id="playground">
 
@@ -243,12 +243,12 @@
             <div class="loop-panel">
                 <div class="loop-label">Итерации цикла</div>
                 <div class="loop-dots">
-                    <span class="loop-dot"></span>
-                    <span class="loop-dot"></span>
-                    <span class="loop-dot"></span>
-                </div>
+    <span class="loop-dot"></span>
+    <span class="loop-dot"></span>
+    <span class="loop-dot"></span>
+</div>
                 <div class="loop-status" id="status">Повторений: 0 из 3</div>
-                <button class="btn-reset" id="reset">Начать заново</button>
+                <button class="btn-reset" id="reset" style="background:#eef2f3; color:#2c3e50; border:1px solid #cbd5e0;">Начать заново</button>
             </div>
 <!-- Рамка с кодом на Паскале: цикл -->
 <div class="code-frame" data-file="Программа на языке Pascal">
@@ -522,5 +522,6 @@
         updateDots();
     })();
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
